@@ -110,7 +110,9 @@ export const getBooks = createSelector(
           searchArray += ` ${author.toLowerCase()}`;
         });
 
-        return searchArray.search(search) > -1 ? true : false;
+        return searchArray.search(search.toLocaleLowerCase()) > -1
+          ? true
+          : false;
       });
     }
 

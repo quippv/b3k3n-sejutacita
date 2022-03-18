@@ -1,6 +1,12 @@
 import { useAppDispatch } from "app/hooks/useAppDispatch";
 import { useAppSelector } from "app/hooks/useAppSelector";
-import { bookSetPage, booksRemove, fetchBooks } from "app/store/books";
+import {
+  bookSetPage,
+  booksRemove,
+  booksSearching,
+  booksSort,
+  fetchBooks,
+} from "app/store/books";
 import {
   categoryLoading,
   categoryUpdateId,
@@ -32,11 +38,13 @@ export const HomePage = () => {
 
   window.onscroll = () => {
     if (
-      window.innerHeight + document.documentElement.scrollTop ===
-      document.documentElement.offsetHeight
+      window.innerHeight + document.documentElement.scrollTop >
+      document.documentElement.offsetHeight - 100
     ) {
       if (!noData && !errorBook) {
         const currentPage = page + 1;
+        dispatch(booksSearching({ search: "" }));
+        dispatch(booksSort({ id: "" }));
         dispatch(bookSetPage({ page: currentPage }));
         fetchBooks(dispatch, { categoryId: category.id, page: currentPage });
       }
