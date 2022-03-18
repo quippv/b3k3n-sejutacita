@@ -33,7 +33,9 @@ export const Books = () => {
       ) : books.length ? (
         books.map((book) => <BookItem key={book.id} book={book} />)
       ) : (
-        <p className="text-center font-medium col-span-2">Data not found</p>
+        <p className="text-center font-medium col-span-2 sm:col-span-3 lg:col-span-4 xl:col-span-5">
+          Data not found
+        </p>
       )}
     </div>
   );
