@@ -34,6 +34,10 @@ Ketika request get, tidak ada spesifik data, seperti page berapa, jumlah data, d
 
 Jika content hal yang harus dibeli user dan akan menjadi rahasia content sebaiknya kita sembunyikan, namun ketika user dengan status berbayar kita bisa membuat content enable, contohnya cukup buat middleware dengan user status premium.
 
+# The Website
+
+https://jolly-lovelace-51c4a5.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
